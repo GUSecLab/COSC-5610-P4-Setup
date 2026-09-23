@@ -1,0 +1,14 @@
+services:
+  p4lab:
+    build:
+      context: .
+      args:
+        BMV2_VERSION: "1.15.2"
+    image: cs-networking-p4lab:1
+    privileged: true
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: ["bash"]
